@@ -67,7 +67,7 @@ Resources:
         Version: 2012-10-17
         Statement:
           - Action:
-              - s3:GetObject
+              - s3:GetObject 
               - s3:GetObjectVersion
             Effect: Allow
             Resource: !Sub arn:aws:s3:::${AWS::StackName}-images/*
@@ -135,6 +135,7 @@ Resources:
             Cookies:
               Forward: none
             Headers:
+              - Access-Control-Allow-Origin
               - Access-Control-Request-Method
               - Access-Control-Request-Headers
               - Origin
